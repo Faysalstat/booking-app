@@ -1,4 +1,4 @@
-package com.bookingapp.bookingservice.dto.client;
+package com.bookingapp.securityservice.dto;
 
 public class AmbulanceDriverDTO {
     private Long id;

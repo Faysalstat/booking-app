@@ -1,0 +1,191 @@
+{
+  "cities": [
+    {
+      "name": "Delhi",
+      "latitude": 28.7041,
+      "longitude": 77.1025,
+      "distances": {
+        "Mumbai": 1447,
+        "Bangalore": 2175,
+        "Chennai": 2200,
+        "Kolkata": 1530,
+        "Hyderabad": 1577,
+        "Pune": 1468,
+        "Ahmedabad": 940,
+        "Jaipur": 268,
+        "Lucknow": 554,
+        "Chandigarh": 244
+      }
+    },
+    {
+      "name": "Mumbai",
+      "latitude": 19.0760,
+      "longitude": 72.8777,
+      "distances": {
+        "Delhi": 1447,
+        "Bangalore": 984,
+        "Chennai": 1338,
+        "Kolkata": 2050,
+        "Hyderabad": 709,
+        "Pune": 148,
+        "Ahmedabad": 524,
+        "Jaipur": 1146,
+        "Lucknow": 1366,
+        "Chandigarh": 1663
+      }
+    },
+    {
+      "name": "Bangalore",
+      "latitude": 12.9716,
+      "longitude": 77.5946,
+      "distances": {
+        "Delhi": 2175,
+        "Mumbai": 984,
+        "Chennai": 346,
+        "Kolkata": 1871,
+        "Hyderabad": 569,
+        "Pune": 841,
+        "Ahmedabad": 1490,
+        "Jaipur": 2008,
+        "Lucknow": 1934,
+        "Chandigarh": 2370
+      }
+    },
+    {
+      "name": "Chennai",
+      "latitude": 13.0827,
+      "longitude": 80.2707,
+      "distances": {
+        "Delhi": 2200,
+        "Mumbai": 1338,
+        "Bangalore": 346,
+        "Kolkata": 1670,
+        "Hyderabad": 627,
+        "Pune": 1190,
+        "Ahmedabad": 1825,
+        "Jaipur": 2186,
+        "Lucknow": 1954,
+        "Chandigarh": 2452
+      }
+    },
+    {
+      "name": "Kolkata",
+      "latitude": 22.5726,
+      "longitude": 88.3639,
+      "distances": {
+        "Delhi": 1530,
+        "Mumbai": 2050,
+        "Bangalore": 1871,
+        "Chennai": 1670,
+        "Hyderabad": 1500,
+        "Pune": 1955,
+        "Ahmedabad": 2068,
+        "Jaipur": 1527,
+        "Lucknow": 1010,
+        "Chandigarh": 1690
+      }
+    },
+    {
+      "name": "Hyderabad",
+      "latitude": 17.3850,
+      "longitude": 78.4867,
+      "distances": {
+        "Delhi": 1577,
+        "Mumbai": 709,
+        "Bangalore": 569,
+        "Chennai": 627,
+        "Kolkata": 1500,
+        "Pune": 560,
+        "Ahmedabad": 1200,
+        "Jaipur": 1485,
+        "Lucknow": 1335,
+        "Chandigarh": 1700
+      }
+    },
+    {
+      "name": "Pune",
+      "latitude": 18.5204,
+      "longitude": 73.8567,
+      "distances": {
+        "Delhi": 1468,
+        "Mumbai": 148,
+        "Bangalore": 841,
+        "Chennai": 1190,
+        "Kolkata": 1955,
+        "Hyderabad": 560,
+        "Ahmedabad": 658,
+        "Jaipur": 1170,
+        "Lucknow": 1345,
+        "Chandigarh": 1680
+      }
+    },
+    {
+      "name": "Ahmedabad",
+      "latitude": 23.0225,
+      "longitude": 72.5714,
+      "distances": {
+        "Delhi": 940,
+        "Mumbai": 524,
+        "Bangalore": 1490,
+        "Chennai": 1825,
+        "Kolkata": 2068,
+        "Hyderabad": 1200,
+        "Pune": 658,
+        "Jaipur": 673,
+        "Lucknow": 1240,
+        "Chandigarh": 1155
+      }
+    },
+    {
+      "name": "Jaipur",
+      "latitude": 26.9124,
+      "longitude": 75.7873,
+      "distances": {
+        "Delhi": 268,
+        "Mumbai": 1146,
+        "Bangalore": 2008,
+        "Chennai": 2186,
+        "Kolkata": 1527,
+        "Hyderabad": 1485,
+        "Pune": 1170,
+        "Ahmedabad": 673,
+        "Lucknow": 573,
+        "Chandigarh": 520
+      }
+    },
+    {
+      "name": "Lucknow",
+      "latitude": 26.8467,
+      "longitude": 80.9462,
+      "distances": {
+        "Delhi": 554,
+        "Mumbai": 1366,
+        "Bangalore": 1934,
+        "Chennai": 1954,
+        "Kolkata": 1010,
+        "Hyderabad": 1335,
+        "Pune": 1345,
+        "Ahmedabad": 1240,
+        "Jaipur": 573,
+        "Chandigarh": 640
+      }
+    },
+    {
+      "name": "Chandigarh",
+      "latitude": 30.7333,
+      "longitude": 76.7794,
+      "distances": {
+        "Delhi": 244,
+        "Mumbai": 1663,
+        "Bangalore": 2370,
+        "Chennai": 2452,
+        "Kolkata": 1690,
+        "Hyderabad": 1700,
+        "Pune": 1680,
+        "Ahmedabad": 1155,
+        "Jaipur": 520,
+        "Lucknow": 640
+      }
+    }
+  ]
+}

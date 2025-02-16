@@ -8,7 +8,7 @@ import java.io.Serializable;
 
 @Entity
 @Table(name = "user_details")
-public class UserDetails implements Serializable {
+public class UserCredential implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -31,10 +31,10 @@ public class UserDetails implements Serializable {
     // Bi-directional relationship to Hospital
     @OneToOne(mappedBy = "user", fetch = FetchType.EAGER)
     private Hospital hospital;
-    public UserDetails() {
+    public UserCredential() {
     }
 
-    public UserDetails(Long id, String username, String password, String location, String phone, UserType userType, AmbulanceDriver ambulanceDriver, Hospital hospital) {
+    public UserCredential(Long id, String username, String password, String location, String phone, UserType userType, AmbulanceDriver ambulanceDriver, Hospital hospital) {
         this.id = id;
         this.username = username;
         this.password = password;

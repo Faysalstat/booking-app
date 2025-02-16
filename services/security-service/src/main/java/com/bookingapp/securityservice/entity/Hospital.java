@@ -1,4 +1,4 @@
-package com.bookingapp.bookingservice.entity;
+package com.bookingapp.securityservice.entity;
 
 import jakarta.persistence.*;
 
@@ -9,18 +9,18 @@ public class Hospital {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column
-    private String hospital;
+    private String hospitalName;
     @OneToOne
     @JoinColumn(name = "user_id")
-    private UserDetails user;
+    private UserCredential user;
 
 
     public Hospital() {
     }
 
-    public Hospital(Long id, String hospital, UserDetails user) {
+    public Hospital(Long id, String hospital, UserCredential user) {
         this.id = id;
-        this.hospital = hospital;
+        this.hospitalName = hospital;
         this.user = user;
     }
 
@@ -32,19 +32,19 @@ public class Hospital {
         this.id = id;
     }
 
-    public String getHospital() {
-        return hospital;
+    public String getHospitalName() {
+        return hospitalName;
     }
 
-    public void setHospital(String hospital) {
-        this.hospital = hospital;
+    public void setHospitalName(String hospitalName) {
+        this.hospitalName = hospitalName;
     }
 
-    public UserDetails getUser() {
+    public UserCredential getUser() {
         return user;
     }
 
-    public void setUser(UserDetails user) {
+    public void setUser(UserCredential user) {
         this.user = user;
     }
 }

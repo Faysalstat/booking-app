@@ -1,9 +1,9 @@
-package com.bookingapp.securityservice;
+package com.bookingapp.securityservice.enums;
 
 public enum UserType {
-    USER("User"),
-    HOSPITAL("Hospital"),
-    AMBULANCE("Ambulance");
+    USER("USER"),
+    HOSPITAL("HOSPITAL"),
+    AMBULANCE("AMBULANCE");
 
     private final String value;
 

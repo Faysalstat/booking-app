@@ -1,30 +1,26 @@
-package com.bookingapp.securityservice.dto;
+package com.bookingapp.bookingservice.dto.client;
 
-import com.bookingapp.securityservice.enums.UserType;
+
+import com.bookingapp.bookingservice.enums.UserType;
 
 public class UserDetailsDTO {
     private Long id;
     private String userName;
     private UserType userType;
-    private String driverName;
     private String phone;
-    private String ambulanceNumber;
-    private String hospitalName;
     private String location;
 
     public UserDetailsDTO() {
     }
 
-    public UserDetailsDTO(Long id, String userName, UserType userType, String driverName, String phone, String ambulanceNumber, String hospitalName, String location) {
+    public UserDetailsDTO(Long id, String userName, UserType userType, String phone, String location) {
         this.id = id;
         this.userName = userName;
         this.userType = userType;
-        this.driverName = driverName;
         this.phone = phone;
-        this.ambulanceNumber = ambulanceNumber;
-        this.hospitalName = hospitalName;
         this.location = location;
     }
+
 
     public Long getId() {
         return id;
@@ -51,13 +47,6 @@ public class UserDetailsDTO {
         this.userType = userType;
     }
 
-    public String getDriverName() {
-        return driverName;
-    }
-
-    public void setDriverName(String driverName) {
-        this.driverName = driverName;
-    }
 
     public String getPhone() {
         return phone;
@@ -67,21 +56,6 @@ public class UserDetailsDTO {
         this.phone = phone;
     }
 
-    public String getAmbulanceNumber() {
-        return ambulanceNumber;
-    }
-
-    public void setAmbulanceNumber(String ambulanceNumber) {
-        this.ambulanceNumber = ambulanceNumber;
-    }
-
-    public String getHospitalName() {
-        return hospitalName;
-    }
-
-    public void setHospitalName(String hospitalName) {
-        this.hospitalName = hospitalName;
-    }
 
     public String getLocation() {
         return location;

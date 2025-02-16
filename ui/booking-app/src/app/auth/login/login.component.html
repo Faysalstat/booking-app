@@ -1,0 +1,44 @@
+  <div class="container-fluid">
+    <ul class="topnav">
+        <!-- <li class="right">
+            <a routerLink="/auth">
+                <button mat-raised-button color="warn" type="button">Login</button>
+            </a>
+        </li> -->
+    </ul>
+
+    <!-- Removed h-100 class from section so it adjusts based on content -->
+    <section class="h-custom" style="background-color: #8fc4b7; padding: 2rem 0;">
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="col-lg-8 col-xl-6">
+                    <div class="card rounded-3">
+                        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img3.webp"
+                            class="w-100" style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;"
+                            alt="Sample photo">
+                        <div class="card-body p-4 p-md-5">
+                            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Login</h3>
+                            <form #login="ngForm" (ngSubmit)="submitForm(login.value)">
+                              <p>
+                                <label for="email">Email: </label>
+                                <input type="email" name="username" id="username" placeholder="youremail@example.com" ngModel #username="ngModel" required email>
+                                <span style="color: red" *ngIf="username.touched && username.errors?.['required']">Email is required</span>
+                                <span style="color:red" *ngIf="username.invalid && username.errors?.['email']">invalid format</span>
+                              </p>
+                              <p>
+                                <label for="password">Password: </label>
+                                <input type="password" name="password" id="password" placeholder="Password" ngModel #password="ngModel" required>
+                                <span style="color: red" *ngIf="password.touched && password.invalid">Password is required</span>
+                              </p>
+                              <button type="submit" [disabled]="login.invalid">Submit</button>
+                            </form>
+                            <footer class="login-footer">
+                              <p>Don't have an account? <a routerLink="/register" >Register here</a></p>
+                            </footer>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

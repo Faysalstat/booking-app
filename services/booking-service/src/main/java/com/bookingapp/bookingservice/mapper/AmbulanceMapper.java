@@ -1,2 +1,4 @@
-package com.bookingapp.bookingservice.mapper;public class AmbulanceMapper {
+package com.bookingapp.bookingservice.mapper;
+
+public class AmbulanceMapper {
 }

@@ -1,4 +1,4 @@
-package com.bookingapp.bookingservice.entity;
+package com.bookingapp.securityservice.entity;
 
 import jakarta.persistence.*;
 
@@ -15,12 +15,12 @@ public class AmbulanceDriver {
     private String ambulanceNumber;
     @OneToOne
     @JoinColumn(name = "user_id")
-    private UserDetails user;
+    private UserCredential user;
 
     public AmbulanceDriver() {
     }
 
-    public AmbulanceDriver(Long id, String driverName, String ambulanceNumber, UserDetails user) {
+    public AmbulanceDriver(Long id, String driverName, String ambulanceNumber, UserCredential user) {
         this.id = id;
         this.driverName = driverName;
         this.ambulanceNumber = ambulanceNumber;
@@ -55,11 +55,11 @@ public class AmbulanceDriver {
 
 
 
-    public UserDetails getUser() {
+    public UserCredential getUser() {
         return user;
     }
 
-    public void setUser(UserDetails user) {
+    public void setUser(UserCredential user) {
         this.user = user;
     }
 }
