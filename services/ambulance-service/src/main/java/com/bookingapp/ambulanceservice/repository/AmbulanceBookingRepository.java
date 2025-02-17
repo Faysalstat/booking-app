@@ -1,4 +1,4 @@
-package com.bookingapp.bookingservice.repository;
+package com.assesment.ambulanceservice.repository;
 
 import com.bookingapp.bookingservice.entity.AmbulanceBooking;
 import org.springframework.data.jpa.repository.JpaRepository;

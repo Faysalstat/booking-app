@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="09d18c3f-390c-47ef-bd90-d0e24d6fc42a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../ambulance-service/src/main/java/com/bookingapp/ambulanceservice/controller/AmbulanceBookingController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ambulance-service/src/main/java/com/bookingapp/ambulanceservice/controller/AmbulanceController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ambulance-service/src/main/java/com/bookingapp/ambulanceservice/dto/CityData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ambulance-service/src/main/java/com/bookingapp/ambulanceservice/dto/CityDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ambulance-service/src/main/java/com/bookingapp/ambulanceservice/dto/Distance.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ambulance-service/src/main/java/com/bookingapp/ambulanceservice/dto/ResponseDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ambulance-service/src/main/java/com/bookingapp/ambulanceservice/dto/booking/AmbulanceBookingDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ambulance-service/src/main/java/com/bookingapp/ambulanceservice/dto/booking/BookingDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ambulance-service/src/main/java/com/bookingapp/ambulanceservice/dto/booking/BookingRequestDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ambulance-service/src/main/java/com/bookingapp/ambulanceservice/dto/booking/HospitalBookingDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ambulance-service/src/main/java/com/bookingapp/ambulanceservice/dto/booking/HospitalBookingResponseDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ambulance-service/src/main/java/com/bookingapp/ambulanceservice/dto/client/AmbulanceDriverDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ambulance-service/src/main/java/com/bookingapp/ambulanceservice/dto/client/ClientDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ambulance-service/src/main/java/com/bookingapp/ambulanceservice/dto/client/HospitalDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ambulance-service/src/main/java/com/bookingapp/ambulanceservice/dto/client/UserDetailsDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ambulance-service/src/main/java/com/bookingapp/ambulanceservice/entity/AmbulanceBooking.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ambulance-service/src/main/java/com/bookingapp/ambulanceservice/entity/AmbulanceDriver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ambulance-service/src/main/java/com/bookingapp/ambulanceservice/entity/Hospital.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ambulance-service/src/main/java/com/bookingapp/ambulanceservice/entity/HospitalBooking.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ambulance-service/src/main/java/com/bookingapp/ambulanceservice/entity/UserDetails.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ambulance-service/src/main/java/com/bookingapp/ambulanceservice/enums/AvailabilityStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ambulance-service/src/main/java/com/bookingapp/ambulanceservice/enums/BookingStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ambulance-service/src/main/java/com/bookingapp/ambulanceservice/enums/UserType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ambulance-service/src/main/java/com/bookingapp/ambulanceservice/mapper/AmbulanceBookingMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ambulance-service/src/main/java/com/bookingapp/ambulanceservice/mapper/AmbulanceMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ambulance-service/src/main/java/com/bookingapp/ambulanceservice/repository/AmbulanceBookingRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ambulance-service/src/main/java/com/bookingapp/ambulanceservice/repository/AmbulanceRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ambulance-service/src/main/java/com/bookingapp/ambulanceservice/repository/UserDetailsRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ambulance-service/src/main/java/com/bookingapp/ambulanceservice/service/AmbulanceBookingService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ambulance-service/src/main/java/com/bookingapp/ambulanceservice/service/AmbulanceService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ambulance-service/src/main/java/com/bookingapp/ambulanceservice/service/CityService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ambulance-service/src/main/java/com/bookingapp/ambulanceservice/serviceImp/AmbulanceBookingServiceImp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ambulance-service/src/main/java/com/bookingapp/ambulanceservice/serviceImp/AmbulanceServiceImp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ambulance-service/src/main/java/com/bookingapp/ambulanceservice/serviceImp/CityServiceImp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ambulance-service/src/main/resources/cityData.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../booking-service/src/main/java/com/bookingapp/bookingservice/controller/AmbulanceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../booking-service/src/main/java/com/bookingapp/bookingservice/controller/AmbulanceController.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Interface" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 2
+}]]></component>
+  <component name="ProjectId" id="2tB43b7N4TY6zMB4p8F6XGm88i8" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "W:/project/Fiverr/booking-app/services/ambulance-service/src/main/resources",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="W:\project\Fiverr\booking-app\services\ambulance-service\src\main\resources" />
+      <recent name="W:\project\Fiverr\booking-app\services\ambulance-service\src\main\java\com\bookingapp\ambulanceservice\entity" />
+      <recent name="W:\project\Fiverr\booking-app\services\ambulance-service\src\main\java\com\bookingapp\ambulanceservice\service" />
+      <recent name="W:\project\Fiverr\booking-app\services\ambulance-service\src\main\java\com\bookingapp\ambulanceservice\serviceImp" />
+      <recent name="W:\project\Fiverr\booking-app\services\ambulance-service\src\main\java\com\bookingapp\ambulanceservice\enums" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.bookingapp.ambulanceservice.repository" />
+      <recent name="com.assesment.ambulanceservice.repository" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="09d18c3f-390c-47ef-bd90-d0e24d6fc42a" name="Changes" comment="" />
+      <created>1739811936900</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1739811936900</updated>
+    </task>
+    <servers />
+  </component>
+</project>
