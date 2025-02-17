@@ -1,7 +1,4 @@
-package com.bookingapp.bookingservice.dto;
-
-import java.util.List;
-import java.util.Map;
+package com.bookingapp.ambulanceservice.dto;
 
 public class CityDto {
     private String name;

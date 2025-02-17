@@ -1,4 +1,4 @@
-package com.bookingapp.bookingservice.dto.booking;
+package com.bookingapp.ambulanceservice.dto.booking;
 
 import java.time.LocalDateTime;
 

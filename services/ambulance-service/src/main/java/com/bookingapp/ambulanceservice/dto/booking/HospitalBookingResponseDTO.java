@@ -1,7 +1,7 @@
-package com.bookingapp.bookingservice.dto.booking;
+package com.bookingapp.ambulanceservice.dto.booking;
 
-import com.bookingapp.bookingservice.enums.BookingStatus;
-import com.bookingapp.bookingservice.enums.UserType;
+import com.bookingapp.ambulanceservice.enums.BookingStatus;
+import com.bookingapp.ambulanceservice.enums.UserType;
 
 public class HospitalBookingResponseDTO {
     private Long id;

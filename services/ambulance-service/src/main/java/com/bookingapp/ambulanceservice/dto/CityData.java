@@ -1,4 +1,4 @@
-package com.bookingapp.bookingservice.dto;
+package com.bookingapp.ambulanceservice.dto;
 // CityData.java
 import java.util.List;
 

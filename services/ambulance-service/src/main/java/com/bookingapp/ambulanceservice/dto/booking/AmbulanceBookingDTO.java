@@ -1,10 +1,10 @@
-package com.bookingapp.bookingservice.dto.booking;
+package com.bookingapp.ambulanceservice.dto.booking;
 
-import com.bookingapp.bookingservice.entity.AmbulanceDriver;
-import com.bookingapp.bookingservice.entity.Hospital;
-import com.bookingapp.bookingservice.entity.UserDetails;
-import com.bookingapp.bookingservice.enums.BookingStatus;
-import jakarta.persistence.*;
+import com.bookingapp.ambulanceservice.entity.AmbulanceDriver;
+import com.bookingapp.ambulanceservice.entity.Hospital;
+import com.bookingapp.ambulanceservice.enums.BookingStatus;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 
 public class AmbulanceBookingDTO {
     private Long id;

@@ -1,4 +1,4 @@
-package com.bookingapp.bookingservice.dto;
+package com.bookingapp.ambulanceservice.dto;
 
 public class Distance {
     private String name;

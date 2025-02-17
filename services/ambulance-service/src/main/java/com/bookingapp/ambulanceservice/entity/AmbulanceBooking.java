@@ -1,7 +1,7 @@
-package com.bookingapp.bookingservice.entity;
+package com.bookingapp.ambulanceservice.entity;
 
 
-import com.bookingapp.bookingservice.enums.BookingStatus;
+import com.bookingapp.ambulanceservice.enums.BookingStatus;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;

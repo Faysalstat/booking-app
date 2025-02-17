@@ -1,4 +1,4 @@
-package com.bookingapp.bookingservice.enums;
+package com.bookingapp.ambulanceservice.enums;
 
 public enum AvailabilityStatus {
     AVAILABLE("AVAILABLE"),

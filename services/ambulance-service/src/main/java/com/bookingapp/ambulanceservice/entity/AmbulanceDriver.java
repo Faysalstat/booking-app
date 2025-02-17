@@ -1,6 +1,6 @@
-package com.bookingapp.bookingservice.entity;
+package com.bookingapp.ambulanceservice.entity;
 
-import com.bookingapp.bookingservice.enums.AvailabilityStatus;
+import com.bookingapp.ambulanceservice.enums.AvailabilityStatus;
 import jakarta.persistence.*;
 
 @Entity

@@ -1,6 +1,6 @@
-package com.assesment.ambulanceservice.repository;
+package com.bookingapp.ambulanceservice.repository;
 
-import com.bookingapp.bookingservice.entity.AmbulanceBooking;
+import com.bookingapp.ambulanceservice.entity.AmbulanceBooking;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,9 +1,4 @@
-package com.bookingapp.bookingservice.dto;
-
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+package com.bookingapp.ambulanceservice.dto;
 
 
 public class ResponseDTO<T> {

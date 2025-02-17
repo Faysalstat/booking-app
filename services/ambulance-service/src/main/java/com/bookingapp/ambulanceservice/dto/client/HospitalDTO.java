@@ -1,4 +1,4 @@
-package com.bookingapp.bookingservice.dto.client;
+package com.bookingapp.ambulanceservice.dto.client;
 
 public class HospitalDTO {
     private Long id;

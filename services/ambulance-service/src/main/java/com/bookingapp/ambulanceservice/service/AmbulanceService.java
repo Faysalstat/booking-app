@@ -1,7 +1,6 @@
-package com.bookingapp.bookingservice.service;
+package com.bookingapp.ambulanceservice.service;
 
-import com.bookingapp.bookingservice.dto.client.AmbulanceDriverDTO;
-import com.bookingapp.bookingservice.enums.AvailabilityStatus;
+import com.bookingapp.ambulanceservice.dto.client.AmbulanceDriverDTO;
 
 import java.util.List;
 

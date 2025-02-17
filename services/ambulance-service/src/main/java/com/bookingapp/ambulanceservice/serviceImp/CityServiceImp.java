@@ -1,9 +1,9 @@
-package com.bookingapp.bookingservice.serviceImp;
+package com.bookingapp.ambulanceservice.serviceImp;
 
-import com.bookingapp.bookingservice.dto.CityData;
-import com.bookingapp.bookingservice.dto.CityDto;
-import com.bookingapp.bookingservice.dto.Distance;
-import com.bookingapp.bookingservice.service.CityService;
+import com.bookingapp.ambulanceservice.dto.CityData;
+import com.bookingapp.ambulanceservice.dto.CityDto;
+import com.bookingapp.ambulanceservice.dto.Distance;
+import com.bookingapp.ambulanceservice.service.CityService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Service;
@@ -11,7 +11,6 @@ import org.springframework.stereotype.Service;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -39,7 +38,7 @@ public class CityServiceImp implements CityService {
         }
     }
     // Helper method to search a city in the loaded data
-    private CityDto findCityByName(String cityName,CityData cityData) {
+    private CityDto findCityByName(String cityName, CityData cityData) {
         return cityData.getCities().stream()
                 .filter(city -> city.getName().equalsIgnoreCase(cityName))
                 .findFirst()

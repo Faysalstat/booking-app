@@ -1,13 +1,13 @@
-package com.bookingapp.bookingservice.serviceImp;
+package com.bookingapp.ambulanceservice.serviceImp;
 
-import com.bookingapp.bookingservice.dto.Distance;
-import com.bookingapp.bookingservice.dto.client.AmbulanceDriverDTO;
-import com.bookingapp.bookingservice.entity.AmbulanceDriver;
-import com.bookingapp.bookingservice.enums.AvailabilityStatus;
-import com.bookingapp.bookingservice.mapper.AmbulanceMapper;
-import com.bookingapp.bookingservice.repository.AmbulanceRepository;
-import com.bookingapp.bookingservice.service.AmbulanceService;
-import com.bookingapp.bookingservice.service.CityService;
+import com.bookingapp.ambulanceservice.dto.Distance;
+import com.bookingapp.ambulanceservice.dto.client.AmbulanceDriverDTO;
+import com.bookingapp.ambulanceservice.entity.AmbulanceDriver;
+import com.bookingapp.ambulanceservice.enums.AvailabilityStatus;
+import com.bookingapp.ambulanceservice.mapper.AmbulanceMapper;
+import com.bookingapp.ambulanceservice.repository.AmbulanceRepository;
+import com.bookingapp.ambulanceservice.service.AmbulanceService;
+import com.bookingapp.ambulanceservice.service.CityService;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -31,7 +31,7 @@ public class AmbulanceServiceImp implements AmbulanceService {
         List<AmbulanceDriverDTO> ambulanceDriverDTOList = new ArrayList();
         List<Distance> distanceList = cityService.getCitiesOrderedByDistance(location);
         distanceList.forEach(distance -> {
-            if(!ambulanceRepository.findAllByUserLocationAndStatus(distance.getName(),AvailabilityStatus.AVAILABLE).isEmpty()){
+            if(!ambulanceRepository.findAllByUserLocationAndStatus(distance.getName(), AvailabilityStatus.AVAILABLE).isEmpty()){
                 List<AmbulanceDriver> closestDriversOfOneLocation = ambulanceRepository.findAllByUserLocationAndStatus(distance.getName(),AvailabilityStatus.AVAILABLE);
                 closestDriversOfOneLocation.forEach(driver->{
                     AmbulanceDriverDTO ambulanceDriverDTO = AmbulanceMapper.toDTO(driver);

@@ -1,7 +1,7 @@
-package com.bookingapp.bookingservice.dto.client;
+package com.bookingapp.ambulanceservice.dto.client;
 
-import com.bookingapp.bookingservice.entity.Hospital;
-import com.bookingapp.bookingservice.entity.UserDetails;
+import com.bookingapp.ambulanceservice.entity.Hospital;
+import com.bookingapp.ambulanceservice.entity.UserDetails;
 
 public class ClientDTO {
     private UserDetails userDetails;

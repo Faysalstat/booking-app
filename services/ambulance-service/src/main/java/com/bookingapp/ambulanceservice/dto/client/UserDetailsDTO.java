@@ -1,7 +1,7 @@
-package com.bookingapp.bookingservice.dto.client;
+package com.bookingapp.ambulanceservice.dto.client;
 
 
-import com.bookingapp.bookingservice.enums.UserType;
+import com.bookingapp.ambulanceservice.enums.UserType;
 
 public class UserDetailsDTO {
     private Long id;

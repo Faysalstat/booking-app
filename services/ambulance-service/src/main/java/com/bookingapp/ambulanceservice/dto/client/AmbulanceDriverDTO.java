@@ -1,6 +1,6 @@
-package com.bookingapp.bookingservice.dto.client;
+package com.bookingapp.ambulanceservice.dto.client;
 
-import com.bookingapp.bookingservice.enums.AvailabilityStatus;
+import com.bookingapp.ambulanceservice.enums.AvailabilityStatus;
 
 public class AmbulanceDriverDTO {
     private Long id;

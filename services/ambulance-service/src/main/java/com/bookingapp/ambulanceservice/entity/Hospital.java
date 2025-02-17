@@ -1,4 +1,4 @@
-package com.bookingapp.bookingservice.entity;
+package com.bookingapp.ambulanceservice.entity;
 
 import jakarta.persistence.*;
 

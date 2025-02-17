@@ -1,21 +1,18 @@
-package com.bookingapp.bookingservice.serviceImp;
+package com.bookingapp.ambulanceservice.serviceImp;
 
-import com.bookingapp.bookingservice.dto.booking.AmbulanceBookingDTO;
-import com.bookingapp.bookingservice.dto.booking.BookingDTO;
-import com.bookingapp.bookingservice.dto.booking.BookingRequestDTO;
-import com.bookingapp.bookingservice.dto.booking.HospitalBookingResponseDTO;
-import com.bookingapp.bookingservice.dto.client.AmbulanceDriverDTO;
-import com.bookingapp.bookingservice.entity.AmbulanceBooking;
-import com.bookingapp.bookingservice.entity.AmbulanceDriver;
-import com.bookingapp.bookingservice.entity.UserDetails;
-import com.bookingapp.bookingservice.enums.AvailabilityStatus;
-import com.bookingapp.bookingservice.enums.BookingStatus;
-import com.bookingapp.bookingservice.mapper.AmbulanceBookingMapper;
-import com.bookingapp.bookingservice.mapper.AmbulanceMapper;
-import com.bookingapp.bookingservice.repository.AmbulanceBookingRepository;
-import com.bookingapp.bookingservice.repository.AmbulanceRepository;
-import com.bookingapp.bookingservice.repository.UserDetailsRepository;
-import com.bookingapp.bookingservice.service.AmbulanceBookingService;
+import com.bookingapp.ambulanceservice.dto.booking.AmbulanceBookingDTO;
+import com.bookingapp.ambulanceservice.dto.booking.BookingDTO;
+import com.bookingapp.ambulanceservice.dto.booking.BookingRequestDTO;
+import com.bookingapp.ambulanceservice.entity.AmbulanceBooking;
+import com.bookingapp.ambulanceservice.entity.AmbulanceDriver;
+import com.bookingapp.ambulanceservice.entity.UserDetails;
+import com.bookingapp.ambulanceservice.enums.AvailabilityStatus;
+import com.bookingapp.ambulanceservice.enums.BookingStatus;
+import com.bookingapp.ambulanceservice.mapper.AmbulanceBookingMapper;
+import com.bookingapp.ambulanceservice.repository.AmbulanceBookingRepository;
+import com.bookingapp.ambulanceservice.repository.AmbulanceRepository;
+import com.bookingapp.ambulanceservice.repository.UserDetailsRepository;
+import com.bookingapp.ambulanceservice.service.AmbulanceBookingService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -59,11 +56,6 @@ public class AmbulanceBookingServiceImp implements AmbulanceBookingService {
             }
         }
         return  ambulanceBookingDTOS;
-    }
-
-    @Override
-    public List<HospitalBookingResponseDTO> getAllBookingListByUserAndType(BookingRequestDTO bookingRequestDTO) {
-        return null;
     }
 
     @Override

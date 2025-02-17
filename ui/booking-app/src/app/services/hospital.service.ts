@@ -12,6 +12,6 @@ export class HospitalService {
   getHospitalsByLocation(location: string): Observable<any> {
     let params = new HttpParams();
     params = params.append('location', location);
-    return this.http.get<any>(HOSPITAL_URL.CLOSEST_AMBULANCE, { params });
+    return this.http.get<any>(HOSPITAL_URL.CLOSEST, { params });
   }
 }

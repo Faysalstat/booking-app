@@ -1,6 +1,6 @@
-package com.bookingapp.bookingservice.service;
+package com.bookingapp.ambulanceservice.service;
 
-import com.bookingapp.bookingservice.dto.Distance;
+import com.bookingapp.ambulanceservice.dto.Distance;
 
 import java.util.List;
 
