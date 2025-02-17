@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { BookingDTO } from '../model/model';
@@ -14,5 +14,13 @@ export class BookingService {
 
   bookAmbulance(payload: BookingDTO): Observable<any> {
     return this.http.post<any>(BOOKING_URL.BOOK_NOW, payload);
+  }
+
+  fetchAllBookingRequestByUserId(userId:number,userType:string): Observable<any> {
+    let payload = {
+      userType:userType,
+      userId:userId
+    }
+    return this.http.put<any>(BOOKING_URL.GET_ALL_BOOKING, payload);
   }
 }

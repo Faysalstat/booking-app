@@ -3,7 +3,9 @@ package com.bookingapp.bookingservice.serviceImp;
 import com.bookingapp.bookingservice.dto.booking.BookingDTO;
 import com.bookingapp.bookingservice.dto.booking.BookingRequestDTO;
 import com.bookingapp.bookingservice.dto.booking.HospitalBookingDTO;
+import com.bookingapp.bookingservice.dto.booking.HospitalBookingResponseDTO;
 import com.bookingapp.bookingservice.entity.*;
+import com.bookingapp.bookingservice.enums.UserType;
 import com.bookingapp.bookingservice.mapper.HospitalBookingMapper;
 import com.bookingapp.bookingservice.repository.*;
 import com.bookingapp.bookingservice.service.AmbulanceBookingService;
@@ -11,6 +13,7 @@ import com.bookingapp.bookingservice.service.AmbulanceService;
 import com.bookingapp.bookingservice.service.HospitalBookingService;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -37,7 +40,20 @@ public class HospitalBookingServiceImp implements HospitalBookingService {
     }
 
     @Override
-    public List<HospitalBookingDTO> getAllHospitalBookingList(BookingRequestDTO requestDTO) {
-        return null;
+    public List<HospitalBookingResponseDTO> getAllHospitalBookingList(BookingRequestDTO requestDTO) {
+        List<HospitalBookingResponseDTO> bookingDTOS = new ArrayList<>();
+        List<HospitalBooking> hospitalBookings = new ArrayList();
+        if(requestDTO.getUserType().equals(UserType.USER)){
+            hospitalBookings = hospitalBookingRepository.findAllByUserId(requestDTO.getUserId());
+        }else if(requestDTO.getUserType().equals(UserType.HOSPITAL)){
+            hospitalBookings = hospitalBookingRepository.findAllByHospitalUserId(requestDTO.getUserId());
+        }
+
+        if(!hospitalBookings.isEmpty()){
+            for (HospitalBooking booking: hospitalBookings) {
+                bookingDTOS.add(HospitalBookingMapper.toBookingDTO(booking,requestDTO.getUserType()));
+            }
+        }
+        return bookingDTOS;
     }
 }

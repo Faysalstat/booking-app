@@ -4,21 +4,19 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthModule } from './auth/auth.module';
 import { WelcomeComponent } from './welcome/welcome.component';
-import { NavbarComponent } from './navbar/navbar.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptorService } from './interceptor/auth-interceptor.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
-    WelcomeComponent,
-    NavbarComponent
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    AuthModule
+    AuthModule,
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

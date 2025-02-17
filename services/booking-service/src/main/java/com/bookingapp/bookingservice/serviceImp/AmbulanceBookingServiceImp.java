@@ -3,6 +3,7 @@ package com.bookingapp.bookingservice.serviceImp;
 import com.bookingapp.bookingservice.dto.booking.AmbulanceBookingDTO;
 import com.bookingapp.bookingservice.dto.booking.BookingDTO;
 import com.bookingapp.bookingservice.dto.booking.BookingRequestDTO;
+import com.bookingapp.bookingservice.dto.booking.HospitalBookingResponseDTO;
 import com.bookingapp.bookingservice.dto.client.AmbulanceDriverDTO;
 import com.bookingapp.bookingservice.entity.AmbulanceBooking;
 import com.bookingapp.bookingservice.entity.AmbulanceDriver;
@@ -51,7 +52,7 @@ public class AmbulanceBookingServiceImp implements AmbulanceBookingService {
     @Override
     public List<AmbulanceBookingDTO> getAllAmbulanceBookingListByDriver(BookingRequestDTO bookingRequestDTO) {
         List<AmbulanceBookingDTO> ambulanceBookingDTOS = new ArrayList();
-        List<AmbulanceBooking> ambulanceBookingList = ambulanceBookingRepository.findAllByAmbulanceDriverId(bookingRequestDTO.getUserId());
+        List<AmbulanceBooking> ambulanceBookingList = ambulanceBookingRepository.findAllByAmbulanceDriverUserId(bookingRequestDTO.getUserId());
         if(!ambulanceBookingList.isEmpty()){
             for (AmbulanceBooking ambulanceBooking:ambulanceBookingList) {
                 ambulanceBookingDTOS.add(AmbulanceBookingMapper.toAmbulanceBookingDTO(ambulanceBooking));
@@ -59,11 +60,17 @@ public class AmbulanceBookingServiceImp implements AmbulanceBookingService {
         }
         return  ambulanceBookingDTOS;
     }
+
     @Override
-    public AmbulanceBookingDTO updateStatus(Long bookingId, BookingStatus status) {
-        AmbulanceBooking ambulanceBooking = ambulanceBookingRepository.findById(bookingId).orElseThrow();
-        ambulanceBooking.setStatus(status);
-        if(status.equals(BookingStatus.COMPLETED)){
+    public List<HospitalBookingResponseDTO> getAllBookingListByUserAndType(BookingRequestDTO bookingRequestDTO) {
+        return null;
+    }
+
+    @Override
+    public AmbulanceBookingDTO updateStatus(AmbulanceBookingDTO ambulanceBookingDTO) {
+        AmbulanceBooking ambulanceBooking = ambulanceBookingRepository.findById(ambulanceBookingDTO.getId()).orElseThrow();
+        ambulanceBooking.setStatus(ambulanceBookingDTO.getStatus());
+        if(ambulanceBookingDTO.getStatus().equals(BookingStatus.COMPLETED)){
             AmbulanceDriver ambulanceDriver = ambulanceRepository.findById(ambulanceBooking.getAmbulanceDriver().getId()).orElseThrow();
             ambulanceDriver.setStatus(AvailabilityStatus.AVAILABLE);
             ambulanceRepository.save(ambulanceDriver);

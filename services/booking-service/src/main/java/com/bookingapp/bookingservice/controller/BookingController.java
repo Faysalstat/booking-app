@@ -1,9 +1,6 @@
 package com.bookingapp.bookingservice.controller;
 
-import com.bookingapp.bookingservice.dto.booking.AmbulanceBookingDTO;
-import com.bookingapp.bookingservice.dto.booking.BookingDTO;
-import com.bookingapp.bookingservice.dto.booking.BookingRequestDTO;
-import com.bookingapp.bookingservice.dto.booking.HospitalBookingDTO;
+import com.bookingapp.bookingservice.dto.booking.*;
 import com.bookingapp.bookingservice.dto.client.AmbulanceDriverDTO;
 import com.bookingapp.bookingservice.entity.AmbulanceBooking;
 import com.bookingapp.bookingservice.service.AmbulanceBookingService;
@@ -36,8 +33,8 @@ public class BookingController {
     }
 
     @PutMapping("/hospital/get-all")
-    public ResponseEntity<List<HospitalBookingDTO>> getHospitalBookingList(@RequestBody BookingRequestDTO bookingRequestDTO) {
-        return null;
+    public ResponseEntity<List<HospitalBookingResponseDTO>> getHospitalBookingList(@RequestBody BookingRequestDTO bookingRequestDTO) {
+        return ResponseEntity.ok().body(hospitalBookingService.getAllHospitalBookingList(bookingRequestDTO));
     }
 
 //    @GetMapping("/get-all-booking")

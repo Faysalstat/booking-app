@@ -3,6 +3,7 @@ package com.bookingapp.bookingservice.service;
 import com.bookingapp.bookingservice.dto.booking.AmbulanceBookingDTO;
 import com.bookingapp.bookingservice.dto.booking.BookingDTO;
 import com.bookingapp.bookingservice.dto.booking.BookingRequestDTO;
+import com.bookingapp.bookingservice.dto.booking.HospitalBookingResponseDTO;
 import com.bookingapp.bookingservice.dto.client.AmbulanceDriverDTO;
 import com.bookingapp.bookingservice.entity.AmbulanceBooking;
 import com.bookingapp.bookingservice.enums.AvailabilityStatus;
@@ -14,6 +15,7 @@ public interface AmbulanceBookingService {
     BookingDTO bookAmbulance(BookingDTO bookingDTO);
     List<AmbulanceBookingDTO> getAllAmbulanceBookingListByDriver(BookingRequestDTO bookingRequestDTO);
 
-    AmbulanceBookingDTO updateStatus(Long bookingId, BookingStatus status);
+    List<HospitalBookingResponseDTO> getAllBookingListByUserAndType(BookingRequestDTO bookingRequestDTO);
+    AmbulanceBookingDTO updateStatus(AmbulanceBookingDTO request);
 }
 

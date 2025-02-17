@@ -1,1 +1,29 @@
-<p>home works!</p>
+<div class="container-fluid">
+    <app-navbar></app-navbar>
+    <div style="background-color: #eee;" class="mt-4 p-5 rounded">
+        <h1>Booking Requests</h1>
+        <table  class="table table-striped">
+            <thead>
+                <tr class="table-dark">
+                    <th>SN</th>
+                    <th>Driver Name</th>
+                    <th>Driver Phone</th>
+                    <th>Pickup Point</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngIf="bookingList?.length==0">
+                    <td colspan="4">*No Record Available</td>
+                </tr>
+                <tr *ngFor="let booking of bookingList; index as i">
+                    <td>{{i+1}}</td>
+                    <td>{{booking.driverName}}</td>
+                    <td>{{booking.driverPhone}}</td>
+                    <td>{{booking.pickupPoint}}</td>
+                    <td>{{booking.status}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

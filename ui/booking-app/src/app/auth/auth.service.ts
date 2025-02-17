@@ -2,7 +2,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AuthenticationUrls, CityUrls } from '../utils/urls.constant';
-import { UserRegistration } from '../model/model';
+import { UserDetails, UserRegistration } from '../model/model';
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +19,7 @@ export class AuthService {
     return this.http.get(AuthenticationUrls.CHECK_IS_LOGGEDIN, { params: params }).toPromise();
   }
 
-  public register(userModel: UserRegistration): Observable<any> {
+  public register(userModel: UserDetails): Observable<any> {
     return this.http.post(AuthenticationUrls.REGISTER_USER, userModel);
   }
 

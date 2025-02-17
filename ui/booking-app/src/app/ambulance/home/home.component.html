@@ -1,12 +1,37 @@
 <div class="container-fluid">
-    <ul class="topnav">
-        <li class="right">
-            <a routerLink="#">
-                <button (click)="logout()" mat-raised-button color="warn" type="button">Log out</button>
-            </a>
-        </li>
-    </ul>
+    <app-navbar></app-navbar>
     <div style="background-color: #eee;" class="mt-4 p-5 rounded">
         <h1>Booking Requests</h1>
+        <table *ngIf="bookingList.length>0" class="table table-striped">
+            <thead>
+                <tr class="table-dark">
+                    <th>SN</th>
+                    <th>Pickup Point</th>
+                    <th>Destination</th>
+                    <th>Destination Hospital</th>
+                    <th>Passenger Contact No.</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngIf="bookingList.length==0">
+                    <td colspan="6">*No Record Available</td>
+                </tr>
+                <tr *ngFor="let booking of bookingList; index as i">
+                    <td>{{i+1}}</td>
+                    <td>{{booking.pickupPoint}}</td>
+                    <td>{{booking.hospitalLocation}}</td>
+                    <td>{{booking.hospitalName}}</td>
+                    <td>{{booking.passengerPhone}}</td>
+                    <td>{{booking.status}}</td>
+                    <td>
+                        <button [ngClass]="generateClass(booking.status)" [disabled]="booking.status == 'COMPLETED'" (click)="updateStatus(booking)" type="button" class="btn ">
+                            {{buttonLabel(booking.status)}}
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </div>

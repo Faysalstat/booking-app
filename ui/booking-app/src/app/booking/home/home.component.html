@@ -1,14 +1,9 @@
 <div class="container-fluid">
-    <ul class="topnav">
-        <li class="right">
-            <a routerLink="#">
-                <button (click)="logout()" mat-raised-button color="warn" type="button">Log out</button>
-            </a>
-        </li>
-    </ul>
+    <app-navbar></app-navbar>
     <form [formGroup]="ambulanceBookingForm">
         <div style="background-color: #eee;" class="mt-4 p-5 rounded">
             <h1>Select Your Pickup Location</h1>
+            <button style="float: right;" (click)="viewList()" type="button" class="btn btn-link">View List</button>
             <div class="row">
                 <div class="col-md-6">
                     <mat-form-field class="input-field" appearance="outline">

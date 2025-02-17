@@ -16,14 +16,17 @@ export class AmbulanceService {
     return this.http.get<any>(AMBULANCE_URL.CLOSEST_AMBULANCE, { params });
   }
   getAllBookingByDriverId(driverId:number): Observable<any> {
-    let params = new HttpParams();
-    params = params.append('id', driverId);
-    return this.http.get<any>(BOOKING_URL.GET_ALL_BOOKING, { params });
+    let payload = {
+      userType:"USER",
+      userId:driverId
+    }
+    return this.http.put<any>(BOOKING_URL.GET_ALL_AMBULANCE_BOOKING, payload);
   }
   updateAmbulanceBookingStatus(bookingId:number,status:string): Observable<any> {
-    let params = new HttpParams();
-    params = params.append('bookingId', bookingId);
-    params = params.append('status', status);
-    return this.http.put<any>(AMBULANCE_URL.UPDATE_AMBULANCE_BOOKING_STATUS, { params });
+    let payload = {
+      id:bookingId,
+      status:status
+    }
+    return this.http.put<any>(AMBULANCE_URL.UPDATE_AMBULANCE_BOOKING_STATUS,payload);
   }
 }

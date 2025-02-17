@@ -1,9 +1,6 @@
 package com.bookingapp.securityservice.serviceImp;
 
-import com.bookingapp.securityservice.dto.LoginResponse;
-import com.bookingapp.securityservice.dto.UserCredentialDto;
-import com.bookingapp.securityservice.dto.UserDetailsDTO;
-import com.bookingapp.securityservice.dto.UserRegistrationDto;
+import com.bookingapp.securityservice.dto.*;
 import com.bookingapp.securityservice.entity.AmbulanceDriver;
 import com.bookingapp.securityservice.entity.Hospital;
 import com.bookingapp.securityservice.entity.UserCredential;
@@ -42,9 +39,9 @@ public class AuthServiceImp implements AuthService {
 
     @Override
     @Transactional
-    public UserDetailsDTO saveUser(UserRegistrationDto userRegistrationDto) throws OperationFailedException {
+    public ResponseDTO<UserDetailsDTO> saveUser(UserRegistrationDto userRegistrationDto){
         if(userCredentialRepository.findByUsername(userRegistrationDto.getUserName()).isPresent()){
-            throw new OperationFailedException("User Already Exists");
+            return new ResponseDTO(false,"User Already Exits",null);
         }
         Hospital hospital = new Hospital();
         AmbulanceDriver ambulanceDriver = new AmbulanceDriver();
@@ -61,8 +58,7 @@ public class AuthServiceImp implements AuthService {
             ambulanceDriver.setUser(createdUser);
             ambulanceRepository.save(ambulanceDriver);
         }
-        return UserCredentialMapper.toUserDetailsDto(createdUser,hospital,ambulanceDriver);
-//
+        return new ResponseDTO(true,"User Created",UserCredentialMapper.toUserDetailsDto(createdUser,hospital,ambulanceDriver));
     }
 
     @Override

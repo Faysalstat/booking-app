@@ -23,16 +23,27 @@
                                 <label style="font-size: larger;font-weight: bold;">Select User Type:</label>
                                 <mat-radio-group formControlName="userType" (change)="onTypeChange($event.value)"
                                     class="mb-5" style="display: flex;">
-                                    <mat-radio-button style ="margin-right: 10px;" value="USER">End User</mat-radio-button>
-                                    <mat-radio-button style ="margin-right: 10px;" value="AMBULANCE">Ambulance Driver</mat-radio-button>
-                                    <mat-radio-button style ="margin-right: 10px;" value="HOSPITAL">Hospital</mat-radio-button>
+                                    <mat-radio-button style="margin-right: 10px;" value="USER">End User
+                                    </mat-radio-button>
+                                    <mat-radio-button style="margin-right: 10px;" value="AMBULANCE">Ambulance Driver
+                                    </mat-radio-button>
+                                    <mat-radio-button style="margin-right: 10px;" value="HOSPITAL">Hospital
+                                    </mat-radio-button>
                                 </mat-radio-group>
                                 <!-- Email -->
-                                <mat-form-field appearance="outline" class="w-100 mb-3">
-                                    <mat-label>Email</mat-label>
-                                    <input matInput type="email" placeholder="Enter email" formControlName="username">
-                                </mat-form-field>
-
+                                <div class="mb-3">
+                                    <mat-form-field class="w-100" appearance="outline" >
+                                        <mat-label>User Name</mat-label>
+                                        <input matInput type="email" placeholder="Enter user name"
+                                            formControlName="userName">
+                                        
+                                    </mat-form-field>
+                                    <small *ngIf="userRegistrationForm.get('userName')?.errors?.['required']">Username is
+                                        required.</small>
+                                    <small *ngIf="userRegistrationForm.get('userName')?.errors?.['pattern']">
+                                        Username cannot contain spaces.
+                                    </small>
+                                </div>
                                 <!-- Password -->
                                 <mat-form-field appearance="outline" class="w-100 mb-3">
                                     <mat-label>Password</mat-label>
@@ -44,7 +55,7 @@
                                     <mat-label>Mobile No</mat-label>
                                     <input matInput placeholder="Enter Mobile No." formControlName="phone">
                                 </mat-form-field>
-                                 <!-- location -->
+                                <!-- location -->
                                 <mat-form-field class="w-100 mb-3" appearance="outline">
                                     <mat-label>Location:</mat-label>
                                     <mat-select formControlName="location">
@@ -61,7 +72,12 @@
                                         <mat-label>Driver Name</mat-label>
                                         <input matInput placeholder="Enter Driver Name" formControlName="driverName">
                                     </mat-form-field>
-                                    
+                                    <mat-form-field appearance="outline" class="w-100 mb-3">
+                                        <mat-label>Ambulance Number</mat-label>
+                                        <input matInput placeholder="Enter Ambulance Number"
+                                            formControlName="ambulanceNumber">
+                                    </mat-form-field>
+
                                 </div>
                                 <!-- Hospital Details -->
                                 <div *ngIf="userRegistrationForm.get('userType')?.value === 'HOSPITAL'">
@@ -72,9 +88,10 @@
                                         <input matInput placeholder="Enter Hospital Name"
                                             formControlName="hospitalName">
                                     </mat-form-field>
-                                    
+
                                 </div>
-                                <button class="w-100 mb-3" mat-raised-button color="primary" type="submit" (click)="onSubmit()">Submit</button>
+                                <button class="w-100 mb-3" mat-raised-button color="primary" type="submit"
+                                    (click)="onSubmit()">Submit</button>
                             </form>
                         </div>
                     </div>

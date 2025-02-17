@@ -30,8 +30,8 @@ public class AmbulanceController {
     }
 
     @PutMapping("/update")
-    public ResponseEntity<AmbulanceBookingDTO> updateAmbulanceBookingStatus(@RequestParam("bookingId") Long bookingId, @RequestParam("status") BookingStatus status){
-        return ResponseEntity.ok().body(ambulanceBookingService.updateStatus(bookingId,status));
+    public ResponseEntity<AmbulanceBookingDTO> updateAmbulanceBookingStatus(@RequestBody AmbulanceBookingDTO request){
+        return ResponseEntity.ok().body(ambulanceBookingService.updateStatus(request));
     }
 
 

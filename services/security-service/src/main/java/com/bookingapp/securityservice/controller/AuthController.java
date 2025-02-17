@@ -20,7 +20,7 @@ public class AuthController {
     private AuthenticationManager authenticationManager;
 
     @PostMapping("/register")
-    public ResponseEntity<UserDetailsDTO> addNewUser(@RequestBody UserRegistrationDto user) throws OperationFailedException {
+    public ResponseEntity<ResponseDTO<UserDetailsDTO>> addNewUser(@RequestBody UserRegistrationDto user) {
         return ResponseEntity.ok().body(authService.saveUser(user));
     }
 

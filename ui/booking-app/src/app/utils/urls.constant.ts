@@ -23,5 +23,6 @@ export const HOSPITAL_URL = {
 }
 export const BOOKING_URL = {
   BOOK_NOW : BASE_URL + "/booking-service/booking",
-  GET_ALL_BOOKING : BASE_URL + "/booking-service/booking//ambulance/get-all",
+  GET_ALL_AMBULANCE_BOOKING : BASE_URL + "/booking-service/booking/ambulance/get-all",
+  GET_ALL_BOOKING : BASE_URL + "/booking-service/booking/hospital/get-all",
 }

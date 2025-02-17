@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public interface AuthService {
-    UserDetailsDTO saveUser(UserRegistrationDto credential) throws OperationFailedException;
+    ResponseDTO<UserDetailsDTO> saveUser(UserRegistrationDto credential);
     LoginResponse generateToken(String username);
     Boolean validateToken(String token);
     UserCredentialDto getUserByUserName(String username);

@@ -29,3 +29,6 @@ ul.topnav li.right {float: right;}
   ul.topnav li {float: none;}
 }
 
+small{
+  color: red;
+}

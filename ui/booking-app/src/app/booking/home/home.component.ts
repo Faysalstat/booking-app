@@ -94,7 +94,7 @@ export class HomeComponent implements OnInit {
     this.bookingService.bookAmbulance(payload).subscribe({
       next:(res)=>{
         console.log(res);
-        this.router.navigate(["list"]);
+        this.router.navigate(["booking/list"]);
       }
     })
   }
@@ -105,10 +105,9 @@ export class HomeComponent implements OnInit {
   isBookedHospital(hospital: any): boolean {
     return this.isHospitalBooked && (this.selectedHospital == hospital);
   }
-  logout(){
-    localStorage.removeItem("userId");
-    localStorage.removeItem("token");
-    localStorage.removeItem("username");
-    localStorage.removeItem("userRole");
+
+  viewList(){
+    this.router.navigate(["booking/list"]);
   }
+
 }

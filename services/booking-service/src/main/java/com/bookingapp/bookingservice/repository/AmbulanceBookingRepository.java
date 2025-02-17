@@ -8,5 +8,5 @@ import java.util.List;
 
 @Repository
 public interface AmbulanceBookingRepository extends JpaRepository<AmbulanceBooking, Long> {
-    List<AmbulanceBooking> findAllByAmbulanceDriverId(Long Id);
+    List<AmbulanceBooking> findAllByAmbulanceDriverUserId(Long Id);
 }

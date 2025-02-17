@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { UserDetails } from 'src/app/model/model';
 import { AuthService } from '../auth.service';
 
@@ -14,7 +15,8 @@ export class RegisterComponent implements OnInit {
   cities!:any[];
   constructor(
     private formBuilder: FormBuilder,
-    private authService:AuthService
+    private authService:AuthService,
+    private router:Router,
   ) { }
 
   ngOnInit(): void {
@@ -24,7 +26,7 @@ export class RegisterComponent implements OnInit {
   prepareForm() {
     let formData = new UserDetails();
     this.userRegistrationForm = this.formBuilder.group({
-      username: [formData.userName, [Validators.required]],
+      userName: [formData.userName, [Validators.required, Validators.pattern(/^\S*$/)]],
       userType: ["USER", [Validators.required]],
       password: [formData.password, [Validators.required]],
       driverName: [formData.driverName],
@@ -65,6 +67,24 @@ export class RegisterComponent implements OnInit {
     }
   }
   onSubmit(){
-
+    if(!this.userRegistrationForm.valid){
+      alert("Error in form");
+      return;
+    }
+    let payload = this.userRegistrationForm.value;
+    this.authService.register(payload).subscribe({
+      next:(res)=>{
+        console.log(res);
+        if(res.success){
+          this.router.navigate(['auth']);
+        }else{
+          alert(res.message)
+        }
+        
+      },
+      error:(err)=>{
+        alert("Registration Failed")
+      }
+    })
   }
 }

@@ -6,13 +6,14 @@ import { BookingRoutingModule } from './booking.routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from 'src/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SharedModule } from '../shared/shared.module';
 
 
 
 @NgModule({
   declarations: [
     HomeComponent,
-    ListComponent
+    ListComponent,
   ],
   imports: [
     CommonModule,
@@ -20,7 +21,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
-    BookingRoutingModule
+    BookingRoutingModule,
+    SharedModule
   ]
 })
 export class BookingModule { }

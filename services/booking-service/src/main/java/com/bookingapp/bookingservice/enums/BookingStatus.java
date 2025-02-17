@@ -1,6 +1,7 @@
 package com.bookingapp.bookingservice.enums;
 
-public enum BookingStatus {AVAILABLE("AVAILABLE"),
+public enum BookingStatus {
+    AVAILABLE("AVAILABLE"),
     PENDING("PENDING"),
     CONFIRMED("CONFIRMED"),
     COMPLETED("COMPLETED");
