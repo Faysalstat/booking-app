@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "hospital_bookings")
+@Table(name = "hospital_booking")
 public class HospitalBooking {
 
     @Id
@@ -26,20 +26,17 @@ public class HospitalBooking {
     private AmbulanceBooking ambulanceBooking;
 
     @Column
-    private LocalDateTime bookingDateTime;
-    @Column
-    private BookingStatus status; // PENDING, CONFIRMED, COMPLETED
+    private LocalDateTime bookingDateTime = LocalDateTime.now();
 
     public HospitalBooking() {
     }
 
-    public HospitalBooking(Long id, UserDetails user, Hospital hospital, AmbulanceBooking ambulanceBooking, LocalDateTime bookingDateTime, BookingStatus status) {
+    public HospitalBooking(Long id, UserDetails user, Hospital hospital, AmbulanceBooking ambulanceBooking, LocalDateTime bookingDateTime) {
         this.id = id;
         this.user = user;
         this.hospital = hospital;
         this.ambulanceBooking = ambulanceBooking;
         this.bookingDateTime = bookingDateTime;
-        this.status = status;
     }
 
     public Long getId() {
@@ -80,13 +77,5 @@ public class HospitalBooking {
 
     public void setBookingDateTime(LocalDateTime bookingDateTime) {
         this.bookingDateTime = bookingDateTime;
-    }
-
-    public BookingStatus getStatus() {
-        return status;
-    }
-
-    public void setStatus(BookingStatus status) {
-        this.status = status;
     }
 }

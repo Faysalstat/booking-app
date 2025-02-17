@@ -1,5 +1,7 @@
 package com.bookingapp.securityservice.dto;
 
+import com.bookingapp.securityservice.enums.AvailabilityStatus;
+
 public class AmbulanceDriverDTO {
     private Long id;
     private String driverName;
@@ -8,16 +10,19 @@ public class AmbulanceDriverDTO {
     private String location;
     private Long userId;
 
+    private AvailabilityStatus status;
+
     // Constructors
     public AmbulanceDriverDTO() {}
 
-    public AmbulanceDriverDTO(Long id, String driverName, String phone, String ambulanceNumber, String location, Long userId) {
+    public AmbulanceDriverDTO(Long id, String driverName, String phone, String ambulanceNumber, String location, Long userId, AvailabilityStatus status) {
         this.id = id;
         this.driverName = driverName;
         this.phone = phone;
         this.ambulanceNumber = ambulanceNumber;
         this.location = location;
         this.userId = userId;
+        this.status = status;
     }
 
     // Getters and Setters
@@ -67,5 +72,13 @@ public class AmbulanceDriverDTO {
 
     public void setUserId(Long userId) {
         this.userId = userId;
+    }
+
+    public AvailabilityStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(AvailabilityStatus status) {
+        this.status = status;
     }
 }

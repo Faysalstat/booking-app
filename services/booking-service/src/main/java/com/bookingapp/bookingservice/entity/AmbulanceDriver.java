@@ -1,5 +1,6 @@
 package com.bookingapp.bookingservice.entity;
 
+import com.bookingapp.bookingservice.enums.AvailabilityStatus;
 import jakarta.persistence.*;
 
 @Entity
@@ -13,18 +14,23 @@ public class AmbulanceDriver {
     private String driverName;
     @Column
     private String ambulanceNumber;
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "user_id")
     private UserDetails user;
+
+    @Column
+    @Enumerated(EnumType.STRING)
+    private AvailabilityStatus status = AvailabilityStatus.AVAILABLE;
 
     public AmbulanceDriver() {
     }
 
-    public AmbulanceDriver(Long id, String driverName, String ambulanceNumber, UserDetails user) {
+    public AmbulanceDriver(Long id, String driverName, String ambulanceNumber, UserDetails user, AvailabilityStatus status) {
         this.id = id;
         this.driverName = driverName;
         this.ambulanceNumber = ambulanceNumber;
         this.user = user;
+        this.status = status;
     }
 
     public Long getId() {
@@ -61,5 +67,13 @@ public class AmbulanceDriver {
 
     public void setUser(UserDetails user) {
         this.user = user;
+    }
+
+    public AvailabilityStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(AvailabilityStatus status) {
+        this.status = status;
     }
 }

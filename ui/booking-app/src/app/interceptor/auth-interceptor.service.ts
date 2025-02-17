@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class AuthInterceptorService {
-  constructor() {}
+  constructor() { }
 
   intercept(
     request: HttpRequest<any>,

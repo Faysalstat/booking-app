@@ -70,17 +70,16 @@ public class CityServiceImp implements CityService {
     @Override
     public List<Distance> getCitiesOrderedByDistance(String cityName) {
         CityData cityData = loadCityData();
-
         List<Distance> cityDistance = new ArrayList<>();
         // 1. Find the reference city
         CityDto referenceCity = findCityByName(cityName,cityData);
         if (referenceCity == null) {
             throw new IllegalArgumentException("City not found: " + cityName);
         }
-        List<CityDto> filteredCities = cityData.getCities().stream()
-                .filter(city -> !city.getName().equalsIgnoreCase(cityName))
-                .collect(Collectors.toList());
-        for (CityDto c : filteredCities) {
+//        List<CityDto> filteredCities = cityData.getCities().stream()
+//                .filter(city -> !city.getName().equalsIgnoreCase(cityName))
+//                .collect(Collectors.toList());
+        for (CityDto c : cityData.getCities()) {
             double distance = calculateHaversineDistance(referenceCity.getLatitude(), referenceCity.getLongitude(), c.getLatitude(), c.getLongitude());
             System.out.println(c.getName() + " => " + distance);
             cityDistance.add(new Distance(c.getName(),distance));

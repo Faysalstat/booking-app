@@ -9,7 +9,7 @@ import { UserRegistration } from '../model/model';
 })
 export class AuthService {
   constructor(private http: HttpClient) { }
-  public login(loginRequest: any) {
+  public login(loginRequest: any): Observable<any> {
     return this.http.post(AuthenticationUrls.LOGIN, loginRequest);
   }
 

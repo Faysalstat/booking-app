@@ -12,9 +12,6 @@ public class UserDetailsMapper {
         dto.setId(entity.getId());
         dto.setUserName(entity.getUsername());
         dto.setUserType(entity.getUserType());
-        dto.setAmbulanceNumber(entity.getAmbulanceNumber());
-        dto.setDriverName(entity.getDriverName());
-        dto.setHospitalName(entity.getHospitalName());
         dto.setPhone(entity.getPhone());
         dto.setLocation(entity.getLocation());
         return dto;

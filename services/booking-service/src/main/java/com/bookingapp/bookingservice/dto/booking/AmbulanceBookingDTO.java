@@ -1,26 +1,21 @@
 package com.bookingapp.bookingservice.dto.booking;
 
-import java.time.LocalDateTime;
+import com.bookingapp.bookingservice.entity.AmbulanceDriver;
+import com.bookingapp.bookingservice.entity.Hospital;
+import com.bookingapp.bookingservice.entity.UserDetails;
+import com.bookingapp.bookingservice.enums.BookingStatus;
+import jakarta.persistence.*;
 
 public class AmbulanceBookingDTO {
     private Long id;
-    private Long userId;
-    private Long ambulanceDriverId;
-    private LocalDateTime bookingDateTime;
-    private String status;
+    private Long driverId;
+    private String passengerName;
+    private String passengerPhone;
+    private String pickupPoint;
+    private String hospitalName;
+    private String hospitalLocation;
+    private BookingStatus status;
 
-    // Constructors
-    public AmbulanceBookingDTO() {}
-
-    public AmbulanceBookingDTO(Long id, Long userId, Long ambulanceDriverId, LocalDateTime bookingDateTime, String status) {
-        this.id = id;
-        this.userId = userId;
-        this.ambulanceDriverId = ambulanceDriverId;
-        this.bookingDateTime = bookingDateTime;
-        this.status = status;
-    }
-
-    // Getters and Setters
     public Long getId() {
         return id;
     }
@@ -29,36 +24,82 @@ public class AmbulanceBookingDTO {
         this.id = id;
     }
 
-    public Long getUserId() {
-        return userId;
+    public Long getDriverId() {
+        return driverId;
     }
 
-    public void setUserId(Long userId) {
-        this.userId = userId;
+    public void setDriverId(Long driverId) {
+        this.driverId = driverId;
     }
 
-    public Long getAmbulanceDriverId() {
-        return ambulanceDriverId;
+    public String getPassengerName() {
+        return passengerName;
     }
 
-    public void setAmbulanceDriverId(Long ambulanceDriverId) {
-        this.ambulanceDriverId = ambulanceDriverId;
+    public void setPassengerName(String passengerName) {
+        this.passengerName = passengerName;
     }
 
-    public LocalDateTime getBookingDateTime() {
-        return bookingDateTime;
+    public String getPassengerPhone() {
+        return passengerPhone;
     }
 
-    public void setBookingDateTime(LocalDateTime bookingDateTime) {
-        this.bookingDateTime = bookingDateTime;
+    public void setPassengerPhone(String passengerPhone) {
+        this.passengerPhone = passengerPhone;
     }
 
-    public String getStatus() {
+    public String getPickupPoint() {
+        return pickupPoint;
+    }
+
+    public void setPickupPoint(String pickupPoint) {
+        this.pickupPoint = pickupPoint;
+    }
+
+    public String getHospitalName() {
+        return hospitalName;
+    }
+
+    public void setHospitalName(String hospitalName) {
+        this.hospitalName = hospitalName;
+    }
+
+    public String getHospitalLocation() {
+        return hospitalLocation;
+    }
+
+    public void setHospitalLocation(String hospitalLocation) {
+        this.hospitalLocation = hospitalLocation;
+    }
+
+    public BookingStatus getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(BookingStatus status) {
         this.status = status;
     }
-}
 
+    public AmbulanceDriver getAmbulanceDriver() {
+        return ambulanceDriver;
+    }
+
+    public void setAmbulanceDriver(AmbulanceDriver ambulanceDriver) {
+        this.ambulanceDriver = ambulanceDriver;
+    }
+
+    public Hospital getHospital() {
+        return hospital;
+    }
+
+    public void setHospital(Hospital hospital) {
+        this.hospital = hospital;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "ambulance_id")
+    private AmbulanceDriver ambulanceDriver;
+    @ManyToOne
+    @JoinColumn(name = "hospital_id")
+    private Hospital hospital;
+}

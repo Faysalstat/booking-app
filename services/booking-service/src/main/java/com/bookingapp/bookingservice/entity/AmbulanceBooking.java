@@ -7,7 +7,7 @@ import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "hospital_bookings")
+@Table(name = "ambulance_bookings")
 public class AmbulanceBooking {
 
     @Id
@@ -21,9 +21,14 @@ public class AmbulanceBooking {
     @ManyToOne
     @JoinColumn(name = "ambulance_id")
     private AmbulanceDriver ambulanceDriver;
+    @ManyToOne
+    @JoinColumn(name = "hospital_id")
+    private Hospital hospital;
 
     @Column
-    private LocalDateTime bookingDateTime;
+    private String pickupLocation;
+    @Column
+    private LocalDateTime bookingDateTime = LocalDateTime.now();
     @Enumerated(EnumType.STRING)
     private BookingStatus status; // PENDING, CONFIRMED, COMPLETED
 
@@ -33,10 +38,16 @@ public class AmbulanceBooking {
     public AmbulanceBooking() {
     }
 
-    public AmbulanceBooking(Long id, UserDetails user, AmbulanceDriver ambulanceDriver, LocalDateTime bookingDateTime,BookingStatus status) {
+    public AmbulanceBooking(Long id) {
+        this.id = id;
+    }
+
+    public AmbulanceBooking(Long id, UserDetails user, AmbulanceDriver ambulanceDriver, Hospital hospital, String pickupLocation, LocalDateTime bookingDateTime, BookingStatus status) {
         this.id = id;
         this.user = user;
         this.ambulanceDriver = ambulanceDriver;
+        this.pickupLocation = pickupLocation;
+        this.hospital = hospital;
         this.bookingDateTime = bookingDateTime;
         this.status = status;
     }
@@ -79,5 +90,21 @@ public class AmbulanceBooking {
 
     public void setStatus(BookingStatus status) {
         this.status = status;
+    }
+
+    public Hospital getHospital() {
+        return hospital;
+    }
+
+    public void setHospital(Hospital hospital) {
+        this.hospital = hospital;
+    }
+
+    public String getPickupLocation() {
+        return pickupLocation;
+    }
+
+    public void setPickupLocation(String pickupLocation) {
+        this.pickupLocation = pickupLocation;
     }
 }

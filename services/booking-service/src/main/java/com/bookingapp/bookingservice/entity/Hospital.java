@@ -9,7 +9,7 @@ public class Hospital {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column
-    private String hospital;
+    private String hospitalName;
     @OneToOne
     @JoinColumn(name = "user_id")
     private UserDetails user;
@@ -18,9 +18,13 @@ public class Hospital {
     public Hospital() {
     }
 
+    public Hospital(Long id) {
+        this.id = id;
+    }
+
     public Hospital(Long id, String hospital, UserDetails user) {
         this.id = id;
-        this.hospital = hospital;
+        this.hospitalName = hospital;
         this.user = user;
     }
 
@@ -32,12 +36,12 @@ public class Hospital {
         this.id = id;
     }
 
-    public String getHospital() {
-        return hospital;
+    public String getHospitalName() {
+        return hospitalName;
     }
 
-    public void setHospital(String hospital) {
-        this.hospital = hospital;
+    public void setHospitalName(String hospitalName) {
+        this.hospitalName = hospitalName;
     }
 
     public UserDetails getUser() {

@@ -1,0 +1,95 @@
+<div class="container-fluid">
+    <ul class="topnav">
+        <li class="right">
+            <a routerLink="#">
+                <button (click)="logout()" mat-raised-button color="warn" type="button">Log out</button>
+            </a>
+        </li>
+    </ul>
+    <form [formGroup]="ambulanceBookingForm">
+        <div style="background-color: #eee;" class="mt-4 p-5 rounded">
+            <h1>Select Your Pickup Location</h1>
+            <div class="row">
+                <div class="col-md-6">
+                    <mat-form-field class="input-field" appearance="outline">
+                        <mat-label>Set Pick-up Location:</mat-label>
+                        <mat-select formControlName="pickupLocation" (selectionChange)="onCitySelect()">
+                            <mat-option *ngFor="let city of cities " [value]="city">
+                                {{city}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div *ngIf="ambulanceList.length>0" class="col-md-12">
+                    <h1>Book an Ambulance</h1>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr class="table-dark">
+                                <th>SN</th>
+                                <th>Driver Name</th>
+                                <th>Ambulance Number</th>
+                                <th>Location</th>
+                                <th>Distance</th>
+                                <th>Phone</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let ambulance of ambulanceList; index as i">
+                                <td>{{i+1}}</td>
+                                <td>{{ambulance?.driverName}}</td>
+                                <td>{{ambulance?.ambulanceNumber}}</td>
+                                <td>{{ambulance?.location}}</td>
+                                <td>{{ambulance?.distance}} KM</td>
+                                <td>{{ambulance?.phone}}</td>
+                                <td>
+                                    <button [disabled]="isAmbulanceBooked" *ngIf="!isBookedAmbulance(ambulance)"
+                                        (click)="selectAmbulance(ambulance)" type="button" class="btn btn-warning">Book
+                                        Now</button>
+                                    <button *ngIf="isBookedAmbulance(ambulance)" type="button"
+                                        class="btn btn-success">Booked</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+
+            </div>
+            <div *ngIf="isAmbulanceBooked" class="row">
+                <h1>Book a Hospital</h1>
+                <div class="col-md-12">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr class="table-dark">
+                                <th>SN</th>
+                                <th>Hospital Name</th>
+                                <th>Location</th>
+                                <th>Distance</th>
+                                <th>Phone</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let hospital of HospitalList; index as i">
+                                <td>{{i+1}}</td>
+                                <td>{{hospital?.hospitalName}}</td>
+                                <td>{{hospital?.location}}</td>
+                                <td>{{hospital?.distance}} KM</td>
+                                <td>{{hospital?.phone}}</td>
+                                <td>
+                                    <button [disabled]="isHospitalBooked" *ngIf="!isBookedHospital(hospital)"
+                                        (click)="selectHospital(hospital)" type="button" class="btn btn-warning">Book
+                                        Now</button>
+                                    <button *ngIf="isBookedHospital(hospital)" type="button"
+                                        class="btn btn-success">Booked</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button class="w-100 mb-3" [disabled]="!isHospitalBooked" mat-raised-button color="primary" type="submit" (click)="bookNow()">Book Now</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

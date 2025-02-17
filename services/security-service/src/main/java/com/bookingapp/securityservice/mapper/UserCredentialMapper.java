@@ -29,7 +29,6 @@ public class UserCredentialMapper {
         if (dto == null) {
             return null;
         }
-
         UserCredential entity = new UserCredential();
         entity.setId(dto.getId());
         entity.setUsername(dto.getUserName());

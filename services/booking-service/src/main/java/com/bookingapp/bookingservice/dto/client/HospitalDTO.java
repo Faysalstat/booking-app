@@ -3,18 +3,26 @@ package com.bookingapp.bookingservice.dto.client;
 public class HospitalDTO {
     private Long id;
     private String hospitalName;
-    private Long userId;
 
-    // Constructors
-    public HospitalDTO() {}
+    private String phone;
 
-    public HospitalDTO(Long id, String hospitalName,  Long userId) {
-        this.id = id;
-        this.hospitalName = hospitalName;
-        this.userId = userId;
+    private UserDetailsDTO userDetailsDTO;
+    private Double distance;
+    private String location;
+
+
+    public HospitalDTO() {
     }
 
-    // Getters and Setters
+    public HospitalDTO(Long id, String hospitalName, String phone, UserDetailsDTO userDetailsDTO, Double distance, String location) {
+        this.id = id;
+        this.hospitalName = hospitalName;
+        this.phone = phone;
+        this.userDetailsDTO = userDetailsDTO;
+        this.distance = distance;
+        this.location = location;
+    }
+
     public Long getId() {
         return id;
     }
@@ -31,12 +39,36 @@ public class HospitalDTO {
         this.hospitalName = hospitalName;
     }
 
-    public Long getUserId() {
-        return userId;
+
+    public UserDetailsDTO getUserDetailsDTO() {
+        return userDetailsDTO;
     }
 
-    public void setUserId(Long userId) {
-        this.userId = userId;
+    public void setUserDetailsDTO(UserDetailsDTO userDetailsDTO) {
+        this.userDetailsDTO = userDetailsDTO;
+    }
+
+    public Double getDistance() {
+        return distance;
+    }
+
+    public void setDistance(Double distance) {
+        this.distance = distance;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
     }
 }
-

@@ -4,7 +4,7 @@ import com.bookingapp.bookingservice.dto.client.AmbulanceDriverDTO;
 import com.bookingapp.bookingservice.dto.client.HospitalDTO;
 
 public interface ClientService {
-    HospitalDTO saveHospital(HospitalDTO hospitalDTO);
+    HospitalDTO saveHospital(HospitalDTO hospital);
     AmbulanceDriverDTO saveAmbulance(AmbulanceDriverDTO ambulanceDriverDTO);
 
 //    HospitalDTO updateClient(HospitalDTO hospitalDTO);

@@ -1,16 +1,17 @@
 package com.bookingapp.bookingservice.dto.client;
 
+import com.bookingapp.bookingservice.entity.Hospital;
 import com.bookingapp.bookingservice.entity.UserDetails;
 
 public class ClientDTO {
     private UserDetails userDetails;
     private AmbulanceDriverDTO ambulanceDriverDTO;
-    private HospitalDTO hospitalDTO;
+    private Hospital hospital;
 
-    public ClientDTO(UserDetails userDetails, AmbulanceDriverDTO ambulanceDriverDTO, HospitalDTO hospitalDTO) {
+    public ClientDTO(UserDetails userDetails, AmbulanceDriverDTO ambulanceDriverDTO, Hospital hospital) {
         this.userDetails = userDetails;
         this.ambulanceDriverDTO = ambulanceDriverDTO;
-        this.hospitalDTO = hospitalDTO;
+        this.hospital = hospital;
     }
 
     public ClientDTO() {
@@ -32,11 +33,11 @@ public class ClientDTO {
         this.ambulanceDriverDTO = ambulanceDriverDTO;
     }
 
-    public HospitalDTO getHospitalDTO() {
-        return hospitalDTO;
+    public Hospital getHospitalDTO() {
+        return hospital;
     }
 
-    public void setHospitalDTO(HospitalDTO hospitalDTO) {
-        this.hospitalDTO = hospitalDTO;
+    public void setHospitalDTO(Hospital hospital) {
+        this.hospital = hospital;
     }
 }

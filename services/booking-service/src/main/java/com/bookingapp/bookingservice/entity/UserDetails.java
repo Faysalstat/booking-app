@@ -12,7 +12,6 @@ public class UserDetails implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     @Column
     private String username;
     @Column
@@ -25,16 +24,25 @@ public class UserDetails implements Serializable {
     @Enumerated(EnumType.STRING)
     private UserType userType;
 
+    // Bi-directional relationship to Ambulance
+    @OneToOne(mappedBy = "user", fetch = FetchType.LAZY)
+    private AmbulanceDriver ambulanceDriver;
+
+    // Bi-directional relationship to Hospital
+    @OneToOne(mappedBy = "user", fetch = FetchType.LAZY)
+    private Hospital hospital;
     public UserDetails() {
     }
 
-    public UserDetails(Long id, String username, String password, String location, String phone, UserType userType) {
+    public UserDetails(Long id, String username, String password, String location, String phone, UserType userType, AmbulanceDriver ambulanceDriver, Hospital hospital) {
         this.id = id;
         this.username = username;
         this.password = password;
         this.location = location;
         this.phone = phone;
         this.userType = userType;
+        this.ambulanceDriver = ambulanceDriver;
+        this.hospital = hospital;
     }
 
     public Long getId() {
@@ -83,5 +91,21 @@ public class UserDetails implements Serializable {
 
     public void setUserType(UserType userType) {
         this.userType = userType;
+    }
+
+    public AmbulanceDriver getAmbulanceDriver() {
+        return ambulanceDriver;
+    }
+
+    public void setAmbulanceDriver(AmbulanceDriver ambulanceDriver) {
+        this.ambulanceDriver = ambulanceDriver;
+    }
+
+    public Hospital getHospital() {
+        return hospital;
+    }
+
+    public void setHospital(Hospital hospital) {
+        this.hospital = hospital;
     }
 }

@@ -1,14 +1,15 @@
 package com.bookingapp.bookingservice.controller;
 
+import com.bookingapp.bookingservice.dto.ResponseDTO;
 import com.bookingapp.bookingservice.dto.client.AmbulanceDriverDTO;
 import com.bookingapp.bookingservice.dto.client.HospitalDTO;
+import com.bookingapp.bookingservice.entity.Hospital;
 import com.bookingapp.bookingservice.service.ClientService;
 import jakarta.ws.rs.BadRequestException;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/booking-service/client")
@@ -20,7 +21,7 @@ public class ClientController {
     }
 
     @PostMapping("hospital")
-    public ResponseEntity<HospitalDTO> saveHospital(@RequestBody HospitalDTO hospitalDTO){
+    public ResponseEntity<HospitalDTO > saveHospital(@RequestBody HospitalDTO hospitalDTO){
         try {
             return ResponseEntity.ok().body(clientService.saveHospital(hospitalDTO));
         }catch (Exception e){
@@ -36,5 +37,7 @@ public class ClientController {
             throw new BadRequestException(e.getMessage());
         }
     }
+
+
 
 }

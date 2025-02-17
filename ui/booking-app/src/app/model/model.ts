@@ -16,34 +16,6 @@ export class UserRegistration {
     userRole: string = "CUSTOMER";
     password!: string;
   }
-
-  export class Category {
-    id!: number;
-    title!: string;
-    description!: string;
-  }
-
-  export class Question{
-     id!: number;
-     content!:string;
-     option1!:string;
-     option2!:string;
-     option3!:string;
-     option4!:string;
-     answer!:string;
-  }
-  export class Quiz{
-    id!: number | null;  // Assuming `id` can be null if not set
-    title!: string;
-    description!: string;
-    maxMarks!: string;
-    numberOfQuestions!: number;
-    active!: boolean;
-    categoryDto!: Category;
-    questions!: Question[];
-  }
-
-
   export class UserDetails {
     userName!: string;
     password!: string;
@@ -60,3 +32,18 @@ export class UserRegistration {
     HOSPITAL,
     AMBULANCE
   }
+
+  export class BookingDTO {
+    id!: number;
+    userId!: number;
+    ambulanceDriverId!: number;
+    hospitalId!: number;
+    pickupLocation!: string;
+    status!: string;
+    hospital!:Hospital;
+  }
+  export class Hospital{
+    id!: number;
+    location!:string;
+  }
+
