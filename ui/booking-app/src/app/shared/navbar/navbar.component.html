@@ -1,8 +1,26 @@
-<ul class="topnav">
-    <li class="right">
-        <a routerLink="#">
-            <button (click)="logout()" mat-raised-button color="warn" type="button">Log out</button>
-        </a>
-    </li>
-</ul>
-  
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Booking App</a>
+        <ul class="nav justify-content-end">
+            <li class="nav-item">
+                <div class="nav-link">
+                    <button type="button" (click)="changePassword()" class="btn btn-dark">Change Password</button>
+                </div>
+            </li>
+            <li class="nav-item">
+                <div class="nav-link">
+                    <button (click)="logout()" mat-raised-button color="warn" type="button">Log out</button>
+                </div>
+            </li>
+          </ul>
+        <!-- <ul class="topnav">
+            <li class="right">
+                <a routerLink="#">
+                    <button (click)="logout()" mat-raised-button color="warn" type="button">Log out</button>
+                </a>
+            </li>
+        </ul> -->
+    </div>
+    
+</nav>
+

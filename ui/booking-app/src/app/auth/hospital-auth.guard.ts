@@ -6,7 +6,7 @@ import { AuthService } from "./auth.service";
 @Injectable({
     providedIn: 'root',
   })
-  export class AdminAuthGuard implements CanActivate {
+  export class HospitalAuthGuard implements CanActivate {
     constructor(
       private router: Router,
       private authService :AuthService,
@@ -31,16 +31,10 @@ import { AuthService } from "./auth.service";
         this.router.navigate(['auth']);
       }
       let userRole = localStorage.getItem('userRole');
-      if (userRole == 'ADMIN') {
-        //console.log('Welcome to admin panel');
-      } else if (userRole == 'USER') {
-        //console.log('Welcome to manager panel');
-        alert("Customer is not permitted");
-        this.router.navigate(['auth']);
-      } else {
-        //console.log('You are not permited to admin panel');
-        this.router.navigate(['auth']);
-      }
+      if (userRole != 'HOSPITAL') {
+        alert("Not a Hospital User")
+        this.router.navigate(['hospital']);
+      } 
       return authenticated;
     }
   }

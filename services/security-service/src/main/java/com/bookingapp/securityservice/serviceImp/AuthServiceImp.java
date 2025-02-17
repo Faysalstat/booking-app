@@ -14,6 +14,9 @@ import com.bookingapp.securityservice.service.AuthService;
 import com.bookingapp.securityservice.service.JwtService;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -36,6 +39,9 @@ public class AuthServiceImp implements AuthService {
 
     @Autowired
     private HospitalRepository hospitalRepository;
+    @Autowired
+    private AuthenticationManager authenticationManager;
+
 
     @Override
     @Transactional
@@ -85,6 +91,17 @@ public class AuthServiceImp implements AuthService {
     @Override
     public UserCredentialDto getUserByUserName(String username) {
         return userCredentialMapper.toDto(userCredentialRepository.findByUsername(username).orElseThrow());
+    }
+
+    @Override
+    public ResponseDTO<UserCredentialDto> changePassword(PasswordChangeDTO passwordChangeDTO) {
+        Authentication authenticate = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(passwordChangeDTO.getUserName(), passwordChangeDTO.getPreviousPassword()));
+        if (authenticate.isAuthenticated()) {
+            UserCredential userCredential = userCredentialRepository.findByUsername(passwordChangeDTO.getUserName()).orElseThrow();
+            userCredential.setPassword(passwordEncoder.encode(passwordChangeDTO.getNewPassword()));
+            return new ResponseDTO<UserCredentialDto>(true,"Password Changed",UserCredentialMapper.toDto(userCredentialRepository.saveAndFlush(userCredential))) ;
+        }
+        return new ResponseDTO<UserCredentialDto>(true,"Wrong Credential",null) ;
     }
 
     private UserRegistrationDto toClientDto(UserRegistrationDto userRegistrationDto){

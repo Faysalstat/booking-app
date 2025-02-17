@@ -3,6 +3,7 @@ const BASE_URL = "http://localhost:8000/api";
 // Security Service 
 export const AuthenticationUrls = {
   REGISTER_USER : BASE_URL + "/auth/register",
+  CHANGE_PASSWORD : BASE_URL + "/auth/change",
   LOGIN : BASE_URL + "/auth/token",
   CHECK_IS_LOGGEDIN: BASE_URL + "/auth/validate"
 }

@@ -10,4 +10,6 @@ public interface AuthService {
     LoginResponse generateToken(String username);
     Boolean validateToken(String token);
     UserCredentialDto getUserByUserName(String username);
+
+    ResponseDTO<UserCredentialDto> changePassword(PasswordChangeDTO passwordChangeDTO);
 }

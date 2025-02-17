@@ -47,3 +47,9 @@ export class UserRegistration {
     location!:string;
   }
 
+  export class PasswordChangeDTO{
+    userName!:string;
+    previousPassword!:string;
+    newPassword!:string;
+  }
+

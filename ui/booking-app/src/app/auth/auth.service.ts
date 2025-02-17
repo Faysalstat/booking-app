@@ -2,7 +2,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AuthenticationUrls, CityUrls } from '../utils/urls.constant';
-import { UserDetails, UserRegistration } from '../model/model';
+import { PasswordChangeDTO, UserDetails, UserRegistration } from '../model/model';
 
 @Injectable({
   providedIn: 'root'
@@ -21,6 +21,10 @@ export class AuthService {
 
   public register(userModel: UserDetails): Observable<any> {
     return this.http.post(AuthenticationUrls.REGISTER_USER, userModel);
+  }
+
+  public changePassword(model: PasswordChangeDTO): Observable<any> {
+    return this.http.post(AuthenticationUrls.CHANGE_PASSWORD, model);
   }
 
   public fetchLocationList(): Observable<any> {

@@ -24,24 +24,17 @@ import { AuthService } from "./auth.service";
     }
     async verifyAdmin(token: any) {
       if (!token) {
-        this.router.navigate(['auth']);
+          this.router.navigate(['auth']);
       }
       let authenticated = await this.authService.isLoggedIn(token);
-      console.log(authenticated);
       if (!authenticated) {
-        this.router.navigate(['auth']);
+          this.router.navigate(['auth']);
       }
       let userRole = localStorage.getItem('userRole');
-      if (userRole == 'USER') {
-        //console.log('Welcome to admin panel');
-      } else if (userRole == 'ADMIN') {
-        //console.log('Welcome to manager panel');
-        alert("ADMIN is not permitted");
-        this.router.navigate(['auth']);
-      } else {
-        //console.log('You are not permited to admin panel');
-        this.router.navigate(['auth']);
+      if (userRole != 'USER') {
+          alert("Not an End User")
+          this.router.navigate(['booking']);
       }
       return authenticated;
-    }
+  }
   }

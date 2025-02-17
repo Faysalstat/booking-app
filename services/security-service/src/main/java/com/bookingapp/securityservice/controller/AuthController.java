@@ -41,4 +41,9 @@ public class AuthController {
     public ResponseEntity<Boolean> validateToken(@RequestParam("token") String token) {
         return ResponseEntity.ok(authService.validateToken(token));
     }
+
+    @PostMapping("/change")
+    public ResponseEntity<ResponseDTO<UserCredentialDto>> changePassword(@RequestBody PasswordChangeDTO passwordChangeDTO) {
+        return ResponseEntity.ok().body(authService.changePassword(passwordChangeDTO));
+    }
 }

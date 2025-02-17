@@ -12,6 +12,9 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  changePassword(){
+    this.router.navigate(['auth/change-password'])
+  }
   logout(){
     localStorage.removeItem("userId");
     localStorage.removeItem("token");
