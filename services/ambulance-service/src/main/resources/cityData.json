@@ -1,0 +1,79 @@
+{
+  "cities": [
+    {
+      "name": "Bangalore",
+      "latitude": 12.9716,
+      "longitude": 77.5946
+    },
+    {
+      "name": "Mysore",
+      "latitude": 12.2958,
+      "longitude": 76.6394
+    },
+    {
+      "name": "Mandya",
+      "latitude": 12.5223,
+      "longitude": 76.8973
+    },
+    {
+      "name": "Channapatna",
+      "latitude": 12.6518,
+      "longitude": 77.2066
+    },
+    {
+      "name": "Ramanagara",
+      "latitude": 12.7140,
+      "longitude": 77.2847
+    },
+    {
+      "name": "Kanakapura",
+      "latitude": 12.5398,
+      "longitude": 77.4211
+    },
+    {
+      "name": "Magadi",
+      "latitude": 12.9570,
+      "longitude": 77.2254
+    },
+    {
+      "name": "Kolar",
+      "latitude": 13.1362,
+      "longitude": 78.1291
+    },
+    {
+      "name": "Chikkaballapur",
+      "latitude": 13.4355,
+      "longitude": 77.7315
+    },
+    {
+      "name": "Devanahalli",
+      "latitude": 13.2476,
+      "longitude": 77.7118
+    },
+    {
+      "name": "Doddaballapur",
+      "latitude": 13.2943,
+      "longitude": 77.5379
+    },
+    {
+      "name": "Nelamangala",
+      "latitude": 13.0992,
+      "longitude": 77.3938
+    },
+    {
+      "name": "Tumkur",
+      "latitude": 13.3422,
+      "longitude": 77.1010
+    },
+    {
+      "name": "Hosur",
+      "latitude": 12.7400,
+      "longitude": 77.8253
+    },
+    {
+      "name": "Krishnagiri",
+      "latitude": 12.5198,
+      "longitude": 78.2132
+    }
+  ]
+}

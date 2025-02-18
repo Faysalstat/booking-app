@@ -1,0 +1,30 @@
+package com.bookingapp.ambulanceservice.dto;
+
+public class Distance {
+    private String name;
+    private Double distance;
+
+    public Distance() {
+    }
+
+    public Distance(String name, Double distance) {
+        this.name = name;
+        this.distance = distance;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Double getDistance() {
+        return distance;
+    }
+
+    public void setDistance(Double distance) {
+        this.distance = distance;
+    }
+}

@@ -1,9 +1,6 @@
 package com.bookingapp.bookingservice.controller;
 
-import com.bookingapp.bookingservice.dto.client.AmbulanceDriverDTO;
 import com.bookingapp.bookingservice.dto.client.HospitalDTO;
-import com.bookingapp.bookingservice.repository.HospitalRepository;
-import com.bookingapp.bookingservice.service.AmbulanceService;
 import com.bookingapp.bookingservice.service.HospitalService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

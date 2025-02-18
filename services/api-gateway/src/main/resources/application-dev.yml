@@ -33,20 +33,10 @@ spring:
         uri: lb://booking-service
         predicates:
           - Path=/api/booking-service/**
-        filters:
-#          - AuthenticationFilter
-#      - id: client-service
-#        uri: lb://client-service
-#        predicates:
-#          - Path=/client/**
-#        filters:
-#          - AuthenticationFilter
-#      - id: category-service
-#        uri: lb://category-service
-#        predicates:
-#          - Path=/category/**
-#        filters:
-#          - AuthenticationFilter
+      - id: ambulance-service
+        uri: lb://ambulance-service
+        predicates:
+          - Path=/api/ambulance/**
 eureka:
   client:
     instance:

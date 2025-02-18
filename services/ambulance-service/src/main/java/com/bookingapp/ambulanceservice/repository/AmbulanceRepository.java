@@ -1,12 +1,13 @@
-package com.bookingapp.bookingservice.repository;
+package com.bookingapp.ambulanceservice.repository;
 
-import com.bookingapp.bookingservice.entity.AmbulanceDriver;
-import com.bookingapp.bookingservice.enums.AvailabilityStatus;
+import com.bookingapp.ambulanceservice.entity.AmbulanceDriver;
+import com.bookingapp.ambulanceservice.enums.AvailabilityStatus;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
-import java.util.Optional;
 
+@Repository
 public interface AmbulanceRepository extends JpaRepository<AmbulanceDriver, Long> {
     List<AmbulanceDriver> findAllByUserLocationAndStatus(String location, AvailabilityStatus status);
 }
