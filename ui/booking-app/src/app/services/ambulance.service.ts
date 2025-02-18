@@ -13,14 +13,14 @@ export class AmbulanceService {
   getAmbulancesByLocation(location: string): Observable<any> {
     let params = new HttpParams();
     params = params.append('location', location);
-    return this.http.get<any>(AMBULANCE_URL.CLOSEST_AMBULANCE, { params });
+    return this.http.get<any>(AMBULANCE_URL.CLOSEST, { params });
   }
   getAllBookingByDriverId(driverId:number): Observable<any> {
     let payload = {
       userType:"USER",
       userId:driverId
     }
-    return this.http.put<any>(BOOKING_URL.GET_ALL_AMBULANCE_BOOKING, payload);
+    return this.http.put<any>(AMBULANCE_URL.GET_ALL_AMBULANCE_BOOKING, payload);
   }
   updateAmbulanceBookingStatus(bookingId:number,status:string): Observable<any> {
     let payload = {

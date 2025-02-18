@@ -1,19 +1,17 @@
-package com.bookingapp.bookingservice.controller;
+package com.bookingapp.ambulanceservice.controller;
 
 
-import com.bookingapp.bookingservice.dto.booking.AmbulanceBookingDTO;
-import com.bookingapp.bookingservice.dto.client.AmbulanceDriverDTO;
-import com.bookingapp.bookingservice.enums.AvailabilityStatus;
-import com.bookingapp.bookingservice.enums.BookingStatus;
-import com.bookingapp.bookingservice.service.AmbulanceBookingService;
-import com.bookingapp.bookingservice.service.AmbulanceService;
+import com.bookingapp.ambulanceservice.dto.booking.AmbulanceBookingDTO;
+import com.bookingapp.ambulanceservice.dto.client.AmbulanceDriverDTO;
+import com.bookingapp.ambulanceservice.service.AmbulanceBookingService;
+import com.bookingapp.ambulanceservice.service.AmbulanceService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/booking-service/ambulance")
+@RequestMapping("/api/ambulance")
 public class AmbulanceController {
     private  final AmbulanceService ambulanceService;
     private  final AmbulanceBookingService ambulanceBookingService;
@@ -36,3 +34,4 @@ public class AmbulanceController {
 
 
 }
+

@@ -14,16 +14,14 @@ export const CityUrls = {
 }
 
 export const AMBULANCE_URL = {
-  CLOSEST_AMBULANCE : BASE_URL + "/booking-service/ambulance/nearest",
-  UPDATE_AMBULANCE_BOOKING_STATUS : BASE_URL + "/booking-service/ambulance/update",
-  
-  
+  CLOSEST : BASE_URL + "/ambulance/nearest",
+  UPDATE_AMBULANCE_BOOKING_STATUS : BASE_URL + "/ambulance/update",
+  GET_ALL_AMBULANCE_BOOKING : BASE_URL + "/ambulance/booking/get-all",
 }
 export const HOSPITAL_URL = {
-  CLOSEST_AMBULANCE : BASE_URL + "/booking-service/hospital/nearest"
+  CLOSEST : BASE_URL + "/booking-service/hospital/nearest"
 }
 export const BOOKING_URL = {
   BOOK_NOW : BASE_URL + "/booking-service/booking",
-  GET_ALL_AMBULANCE_BOOKING : BASE_URL + "/booking-service/booking/ambulance/get-all",
   GET_ALL_BOOKING : BASE_URL + "/booking-service/booking/hospital/get-all",
 }
