@@ -3,8 +3,13 @@ package com.bookingapp.securityservice.dto;
 public class PasswordChangeDTO {
     private String userName;
     private String previousPassword;
-
     private String newPassword;
+
+    public PasswordChangeDTO(String userName, String previousPassword, String newPassword) {
+        this.userName = userName;
+        this.previousPassword = previousPassword;
+        this.newPassword = newPassword;
+    }
 
     public String getUserName() {
         return userName;

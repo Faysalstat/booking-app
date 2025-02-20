@@ -99,7 +99,9 @@ public class AuthServiceImp implements AuthService {
         if (authenticate.isAuthenticated()) {
             UserCredential userCredential = userCredentialRepository.findByUsername(passwordChangeDTO.getUserName()).orElseThrow();
             userCredential.setPassword(passwordEncoder.encode(passwordChangeDTO.getNewPassword()));
-            return new ResponseDTO<UserCredentialDto>(true,"Password Changed",UserCredentialMapper.toDto(userCredentialRepository.saveAndFlush(userCredential))) ;
+            UserCredentialDto createdDto = UserCredentialMapper.toDto(userCredentialRepository.saveAndFlush(userCredential));
+            createdDto.setPassword("");
+            return new ResponseDTO<UserCredentialDto>(true,"Password Changed",createdDto) ;
         }
         return new ResponseDTO<UserCredentialDto>(true,"Wrong Credential",null) ;
     }

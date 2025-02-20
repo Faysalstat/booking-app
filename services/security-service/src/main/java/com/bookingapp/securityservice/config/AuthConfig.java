@@ -27,9 +27,9 @@ public class AuthConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http
                 .csrf(csrf -> csrf
-                        .ignoringRequestMatchers("/api/auth/register", "/api/auth/token", "/api/auth/validate")) // Disable CSRF for these paths
+                        .ignoringRequestMatchers("/api/auth/register", "/api/auth/token", "/api/auth/validate","/api/auth/change")) // Disable CSRF for these paths
                 .authorizeHttpRequests(authz -> authz
-                        .requestMatchers("/api/auth/register", "/api/auth/token", "/api/auth/validate").permitAll()
+                        .requestMatchers("/api/auth/register", "/api/auth/token", "/api/auth/validate","/api/auth/change").permitAll()
                         .anyRequest().authenticated())
                 .build();
     }
